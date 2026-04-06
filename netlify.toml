@@ -1,0 +1,63 @@
+# ══════════════════════════════════════════════════════════════════
+#  YELLITAARE Thidé — Configuration Netlify
+#  Déploiement : glisser-déposer ce dossier dans Netlify Drop
+# ══════════════════════════════════════════════════════════════════
+
+[build]
+  functions = "netlify/functions"
+  publish   = "."
+
+# ── Formulaires Netlify ──────────────────────────────────────────
+# (détectés automatiquement via les attributs netlify dans le HTML)
+
+# ── En-têtes sécurité ────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"
+
+[[headers]]
+  for = "/netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin  = "*"
+    Access-Control-Allow-Methods = "POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# ── Redirections ─────────────────────────────────────────────────
+[[redirects]]
+  from = "/adhesion-yellitaare"
+  to   = "/adhesion.html"
+  status = 301
+
+[[redirects]]
+  from = "/cotisation"
+  to   = "/adhesion.html"
+  status = 301
+
+[[redirects]]
+  from = "/transparence"
+  to   = "/transparence.html"
+  status = 301
+
+[[redirects]]
+  from = "/commissions"
+  to   = "/commissions.html"
+  status = 301
+
+[[redirects]]
+  from = "/espace-membre"
+  to   = "/espace-membre.html"
+  status = 301
+
+# Fallback 404
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 404

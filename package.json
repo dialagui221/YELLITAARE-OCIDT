@@ -1,0 +1,9 @@
+{
+  "name": "yellitaare-thide",
+  "version": "1.0.0",
+  "description": "YELLITAARE Thidé — Site communautaire avec fonctions Netlify",
+  "private": true,
+  "dependencies": {
+    "africastalking": "^0.7.7"
+  }
+}

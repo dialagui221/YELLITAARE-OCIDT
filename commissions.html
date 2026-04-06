@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commissions thématiques – YELLITAARE Thidé</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1A6B3C;--green-dark:#124D2C;--green-light:#EAF5EE;--green-mid:#2D8A56;
+  --gold:#C9982A;--gold-light:#FDF6E3;--gold-dark:#9B7015;
+  --white:#fff;--off-white:#F8FAF9;
+  --gray-100:#F2F4F3;--gray-300:#D0D8D3;--gray-500:#7A8C82;--gray-700:#3D4D44;
+  --text:#1E2D26;--radius:10px;
+  --shadow:0 4px 24px rgba(26,107,60,.10);--shadow-lg:0 12px 48px rgba(26,107,60,.18);
+  --container:1100px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* NAV */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--gray-300);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-badge{width:44px;height:44px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 2px 10px rgba(201,152,42,.35)}
+.brand-text h1{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--green-dark);line-height:1.1}
+.brand-text p{font-size:11px;color:var(--gray-500);letter-spacing:.3px}
+.main-nav{display:flex;align-items:center;gap:4px}
+.main-nav a{font-size:13px;font-weight:500;color:var(--gray-700);padding:7px 11px;border-radius:var(--radius);transition:all .18s}
+.main-nav a:hover,.main-nav a.active{color:var(--green);background:var(--green-light)}
+.nav-cta{padding:9px 18px;border-radius:var(--radius);background:var(--green);color:#fff;font-size:13px;font-weight:600;transition:all .18s;white-space:nowrap}
+.nav-cta:hover{background:var(--green-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .25s}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--gray-100);padding:16px 24px 20px;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:14px;font-weight:500;color:var(--gray-700);padding:10px 0;border-bottom:1px solid var(--gray-100)}
+.mobile-menu .nav-cta{margin-top:10px;text-align:center;display:block;border-radius:var(--radius)}
+@media(max-width:900px){.main-nav{display:none}.hamburger{display:flex}}
+
+/* GATE */
+.gate-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(18,77,44,.88);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px}
+.gate-overlay.show{display:flex}
+.gate-box{background:#fff;border-radius:14px;padding:44px 36px 36px;width:100%;max-width:440px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:gateIn .35s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes gateIn{from{transform:scale(.88) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.gate-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1A6B3C,#2D8A56);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(26,107,60,.35)}
+.gate-icon svg{width:32px;height:32px;color:#fff}
+.gate-badge{display:inline-block;background:#FDF6E3;border:1px solid rgba(201,152,42,.4);color:#9B7015;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
+.gate-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#124D2C;margin-bottom:10px}
+.gate-sub{font-size:14px;color:#7A8C82;line-height:1.6;margin-bottom:28px}
+.gate-actions{display:flex;flex-direction:column;gap:10px}
+.gate-btn-primary{padding:13px 24px;border-radius:10px;background:#1A6B3C;color:#fff;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.gate-btn-primary:hover{background:#124D2C}
+.gate-btn-secondary{padding:12px 24px;border-radius:10px;background:#F2F4F3;color:#3D4D44;font-size:13.5px;font-weight:600;font-family:'DM Sans',sans-serif;border:1.5px solid #D0D8D3;cursor:pointer;transition:all .18s}
+.gate-btn-secondary:hover{border-color:#1A6B3C;color:#1A6B3C;background:#EAF5EE}
+.gate-divider{display:flex;align-items:center;gap:10px;font-size:11px;color:#7A8C82;margin:4px 0}
+.gate-divider::before,.gate-divider::after{content:'';flex:1;height:1px;background:#D0D8D3}
+.gate-ref-form{display:none;margin-top:4px}
+.gate-ref-form.show{display:block}
+.gate-ref-input{width:100%;padding:11px 14px;margin-bottom:8px;border:1.5px solid #D0D8D3;border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;text-align:center;letter-spacing:2px;text-transform:uppercase;outline:none}
+.gate-ref-input:focus{border-color:#1A6B3C}
+.gate-ref-err{font-size:12px;color:#c0392b;margin-bottom:8px;display:none}
+
+/* PAGE HERO */
+.page-hero{background:var(--green-dark);padding:52px 0 44px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(201,152,42,.18) 0%,transparent 70%)}
+.hero-inner{position:relative}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.5);margin-bottom:16px}
+.breadcrumb a{color:rgba(255,255,255,.5);transition:color .15s}
+.breadcrumb a:hover{color:rgba(255,255,255,.85)}
+.breadcrumb span{color:rgba(255,255,255,.3)}
+.page-tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.1}
+.page-sub{font-size:15px;color:rgba(255,255,255,.65);max-width:620px}
+.page-hero-bar{height:5px;background:linear-gradient(90deg,var(--gold),var(--green-mid))}
+
+/* INTRO BAND */
+.intro-band{background:var(--white);border-bottom:1px solid var(--gray-100);padding:24px 0}
+.intro-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.intro-icon{width:52px;height:52px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.intro-icon svg{width:26px;height:26px;color:var(--green)}
+.intro-text h2{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--green-dark)}
+.intro-text p{font-size:13px;color:var(--gray-500)}
+.intro-count{margin-left:auto;text-align:center;flex-shrink:0}
+.intro-count .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold-dark);line-height:1}
+.intro-count .lbl{font-size:11px;color:var(--gray-500);letter-spacing:.3px}
+
+/* SECTION GENERALE */
+.section{padding:52px 0}
+.section-tag{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.section-sub{font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:28px}
+
+/* COMMISSIONS GRID */
+.comm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:40px}
+@media(max-width:900px){.comm-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.comm-grid{grid-template-columns:1fr}}
+
+.comm-card{background:var(--white);border:1px solid var(--gray-300);border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow);border-top:4px solid var(--green);cursor:pointer;transition:all .22s;position:relative}
+.comm-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-top-color:var(--gold)}
+.comm-card.featured{border-top-color:var(--gold);background:linear-gradient(160deg,#fff 70%,var(--gold-light) 100%)}
+.comm-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--gray-300);line-height:1;margin-bottom:10px}
+.comm-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
+.comm-icon svg{width:20px;height:20px}
+.comm-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--green-dark);line-height:1.3;margin-bottom:8px}
+.comm-desc{font-size:12.5px;color:var(--gray-500);line-height:1.55}
+.comm-tag{position:absolute;top:14px;right:14px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:999px}
+.tag-obligatoire{background:var(--green-light);color:var(--green-dark)}
+.tag-elargi{background:var(--gold-light);color:var(--gold-dark)}
+
+/* COMMISSION FEATURED — INFRASTRUCTURES */
+.infra-card{background:var(--white);border:2px solid var(--gold);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-lg);margin-bottom:40px;position:relative;overflow:hidden}
+.infra-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--green),var(--gold))}
+.infra-header{display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;flex-wrap:wrap}
+.infra-icon{width:56px;height:56px;border-radius:12px;background:var(--gold-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.infra-icon svg{width:28px;height:28px;color:var(--gold-dark)}
+.infra-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--green-dark);margin-bottom:4px}
+.infra-sub{font-size:13.5px;color:var(--gray-500);line-height:1.6;max-width:600px}
+.infra-tag{display:inline-flex;align-items:center;gap:5px;background:var(--gold-light);border:1px solid rgba(201,152,42,.4);color:var(--gold-dark);border-radius:999px;font-size:11px;font-weight:600;padding:4px 12px;margin-top:6px}
+
+/* SECTIONS GÉOGRAPHIQUES */
+.sections-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--green-dark);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sections-title::after{content:'';flex:1;height:1px;background:var(--gray-300)}
+.geo-sections{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:700px){.geo-sections{grid-template-columns:1fr}}
+
+.geo-section{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .2s}
+.geo-section:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.geo-header{padding:18px 20px;display:flex;align-items:center;gap:12px}
+.geo-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;opacity:.25;line-height:1;flex-shrink:0}
+.geo-header-text h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;line-height:1.2;margin-bottom:2px}
+.geo-header-text p{font-size:11.5px;opacity:.8}
+.geo-body{padding:16px 20px;background:var(--white)}
+.geo-body p{font-size:13px;color:var(--gray-500);line-height:1.6;margin-bottom:12px}
+.geo-locations{display:flex;flex-wrap:wrap;gap:6px}
+.loc-pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--gray-100);color:var(--gray-700);border:1px solid var(--gray-300)}
+
+/* Section 1 — Village */
+.geo-section.village .geo-header{background:var(--green-dark)}
+.geo-section.village .geo-num{color:#fff}
+.geo-section.village .geo-header-text h3{color:#fff}
+.geo-section.village .geo-header-text p{color:rgba(255,255,255,.7)}
+
+/* Section 2 — Nationaux */
+.geo-section.national .geo-header{background:var(--green)}
+.geo-section.national .geo-num{color:#fff}
+.geo-section.national .geo-header-text h3{color:#fff}
+.geo-section.national .geo-header-text p{color:rgba(255,255,255,.7)}
+
+/* Section 3 — Diaspora */
+.geo-section.diaspora .geo-header{background:var(--gold-dark)}
+.geo-section.diaspora .geo-num{color:#fff}
+.geo-section.diaspora .geo-header-text h3{color:#fff}
+.geo-section.diaspora .geo-header-text p{color:rgba(255,255,255,.7)}
+
+/* CG MANDATE BOX */
+.mandate-box{background:var(--green-light);border:1px solid rgba(26,107,60,.2);border-left:5px solid var(--green);border-radius:var(--radius);padding:22px 24px;margin-bottom:32px}
+.mandate-box p{font-size:14px;color:var(--gray-700);line-height:1.7}
+.mandate-box strong{color:var(--green-dark)}
+
+/* LISTE RAPIDE */
+.quick-list{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.quick-item{background:var(--white);border:1px solid var(--gray-300);border-left:4px solid var(--green);border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:14px;font-size:13.5px;font-weight:500;color:var(--green-dark);transition:all .15s}
+.quick-item:hover{background:var(--green-light);transform:translateX(4px)}
+.quick-item svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+.quick-item span.num{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--gold-dark);min-width:26px}
+
+/* CTA */
+.cta-strip{background:var(--green-dark);border-radius:var(--radius);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(201,152,42,.18) 0%,transparent 70%)}
+.cta-strip-text{position:relative}
+.cta-strip-text .tag{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.cta-strip-text h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.cta-strip-text p{font-size:13px;color:rgba(255,255,255,.65)}
+.cta-strip-btn{position:relative;padding:12px 24px;border-radius:var(--radius);background:var(--gold);color:#fff;font-size:13.5px;font-weight:600;font-family:'DM Sans',sans-serif;border:none;cursor:pointer;transition:all .18s;white-space:nowrap}
+.cta-strip-btn:hover{background:var(--gold-dark)}
+
+/* FOOTER */
+.site-footer{background:var(--green-dark);color:#ecfdf5;padding:48px 0 0;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand .logo-badge{background:var(--gold);width:46px;height:46px;font-size:19px;margin-bottom:14px}
+.footer-brand h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;margin-bottom:8px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;max-width:300px}
+.footer-col h4{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.footer-col ul{list-style:none;display:grid;gap:9px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.7);transition:color .15s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bar{text-align:center;padding:14px 0;font-size:11.5px;color:rgba(255,255,255,.4)}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- VERROU -->
+<div class="gate-overlay" id="gate-overlay">
+  <div class="gate-box">
+    <div class="gate-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+    <div class="gate-badge">Accès réservé aux membres</div>
+    <h2 class="gate-title">Adhésion requise</h2>
+    <p class="gate-sub">Cette rubrique est réservée aux membres de YELLITAARE Thidé. Adhérez ou connectez-vous avec votre référence.</p>
+    <div class="gate-actions">
+      <button class="gate-btn-primary" onclick="window.location.href='adhesion.html'">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:16px;height:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+        Adhérer maintenant
+      </button>
+      <div class="gate-divider">ou</div>
+      <button class="gate-btn-secondary" onclick="toggleGateRef()">J'ai déjà une référence →</button>
+      <div class="gate-ref-form" id="gate-ref-form">
+        <input type="text" class="gate-ref-input" id="gate-ref-input" placeholder="ADH-YELLITAARE-2026-XXXX" oninput="this.value=this.value.toUpperCase()" onkeydown="if(event.key==='Enter')gateLogin()">
+        <div class="gate-ref-err" id="gate-ref-err">Référence introuvable. Vérifiez votre attestation.</div>
+        <button class="gate-btn-primary" onclick="gateLogin()" style="margin-top:4px;">Accéder →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="site-header">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <div class="logo-badge">YT</div>
+        <div class="brand-text"><h1>YELLITAARE Thidé</h1><p>Organisation Communautaire Inclusive</p></div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="transparence.html">Transparence</a>
+        <a href="commissions.html" class="active">Commissions</a>
+        <a href="adhesion.html">Adhésion</a>
+        <a href="espace-membre.html">Espace membre</a>
+      </nav>
+      <a href="adhesion.html" class="nav-cta">Adhérer →</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Accueil</a>
+    <a href="transparence.html">Transparence</a>
+    <a href="commissions.html">Commissions</a>
+    <a href="adhesion.html">Adhésion</a>
+    <a href="espace-membre.html">Espace membre</a>
+    <a href="adhesion.html" class="nav-cta">Adhérer →</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a><span>›</span>
+      <span style="color:rgba(255,255,255,.75)">Commissions thématiques</span>
+    </div>
+    <div class="page-tag">Gouvernance · Comité de Gestion</div>
+    <h1 class="page-title">Commissions thématiques</h1>
+    <p class="page-sub">Le Comité de Gestion (CG) met en place des commissions thématiques pour encadrer les actions dans les domaines prioritaires — 8 commissions obligatoires, 3 sections géographiques.</p>
+  </div>
+  <div class="page-hero-bar"></div>
+</section>
+
+<!-- BANDEAU INTRO -->
+<div class="intro-band">
+  <div class="container">
+    <div class="intro-inner">
+      <div class="intro-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      </div>
+      <div class="intro-text">
+        <h2>Structure participative et inclusive</h2>
+        <p>Chaque commission a sa mission spécifique, ses responsables désignés et ses membres actifs — toutes animées par le même esprit : servir Thidé.</p>
+      </div>
+      <div class="intro-count">
+        <div class="num">8</div>
+        <div class="lbl">Commissions obligatoires</div>
+      </div>
+      <div class="intro-count" style="margin-left:0">
+        <div class="num">3</div>
+        <div class="lbl">Sections géographiques</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENU PRINCIPAL -->
+<div class="section">
+  <div class="container">
+
+    <!-- Mandat CG -->
+    <div class="mandate-box">
+      <p>
+        <strong>Art. – Commissions thématiques :</strong> Le Comité de Gestion (CG) met en place des commissions thématiques pour encadrer les actions dans les domaines prioritaires de l'organisation. Ces commissions constituent le bras opérationnel du CG. Les commissions listées ci-dessous sont <strong>obligatoires et minimales</strong> — le CG peut en créer d'autres selon les besoins identifiés.
+      </p>
+    </div>
+
+    <!-- Titre -->
+    <div class="section-tag">Commissions minimales obligatoires</div>
+    <h2 class="section-title">Les 8 commissions thématiques</h2>
+    <p class="section-sub">Chaque commission est pilotée par le Comité de Gestion et rend compte à l'Assemblée Générale. Leur composition, leurs attributions et leur mode de fonctionnement sont définis par le Règlement Intérieur.</p>
+
+    <!-- Grille des commissions -->
+    <div class="comm-grid">
+
+      <div class="comm-card" id="comm-1">
+        <div class="comm-num">01</div>
+        <div class="comm-icon" style="background:#e8f4e8"><svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></div>
+        <div class="comm-name">Éducation et Formation</div>
+        <div class="comm-desc">Soutien à la scolarisation, bourses, formation professionnelle et renforcement des capacités des jeunes de Thidé.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-2">
+        <div class="comm-num">02</div>
+        <div class="comm-icon" style="background:#e0f2fe"><svg viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/></svg></div>
+        <div class="comm-name">Eau, Hygiène et Assainissement</div>
+        <div class="comm-desc">Accès à l'eau potable, infrastructures sanitaires et sensibilisation aux pratiques d'hygiène au village et dans les sections.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-3">
+        <div class="comm-num">03</div>
+        <div class="comm-icon" style="background:#fde8e8"><svg viewBox="0 0 24 24" fill="none" stroke="#9b1c1c" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+        <div class="comm-name">Santé et Actions sociales</div>
+        <div class="comm-desc">Soins de santé communautaire, soutien aux personnes vulnérables, solidarité lors des événements familiaux et sociaux.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-4">
+        <div class="comm-num">04</div>
+        <div class="comm-icon" style="background:#f5eef8"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg></div>
+        <div class="comm-name">Jeunesse, Sport et Culture</div>
+        <div class="comm-desc">Animation culturelle, activités sportives, valorisation du patrimoine immatériel et mobilisation de la jeunesse autour de projets fédérateurs.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-5">
+        <div class="comm-num">05</div>
+        <div class="comm-icon" style="background:#fdf4dc"><svg viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="comm-name">Femmes et Genre</div>
+        <div class="comm-desc">Autonomisation des femmes, égalité des chances, soutien aux initiatives féminines et participation active des femmes à la gouvernance de l'organisation.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-6">
+        <div class="comm-num">06</div>
+        <div class="comm-icon" style="background:#ecfdf5"><svg viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <div class="comm-name">Développement Économique</div>
+        <div class="comm-desc">Création d'activités génératrices de revenus, soutien à l'entrepreneuriat local, mobilisation des ressources et développement des filières économiques de Thidé.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <div class="comm-card" id="comm-7">
+        <div class="comm-num">07</div>
+        <div class="comm-icon" style="background:#eff6ff"><svg viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div>
+        <div class="comm-name">Diaspora et Relations extérieures</div>
+        <div class="comm-desc">Coordination avec la diaspora internationale, partenariats extérieurs, rayonnement de Thidé au-delà de ses frontières et mobilisation des ressortissants à l'étranger.</div>
+        <span class="comm-tag tag-obligatoire">Obligatoire</span>
+      </div>
+
+      <!-- Commission 8 — Infrastructures (FEATURED) -->
+      <div class="comm-card featured" id="comm-8" onclick="document.getElementById('infra-section').scrollIntoView({behavior:'smooth'})">
+        <div class="comm-num">08</div>
+        <div class="comm-icon" style="background:var(--gold-light)"><svg viewBox="0 0 24 24" fill="none" stroke="#9B7015" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+        <div class="comm-name">Infrastructures et Environnement</div>
+        <div class="comm-desc">Construction et entretien des infrastructures communautaires, protection de l'environnement — avec <strong>3 sections géographiques</strong>.</div>
+        <span class="comm-tag tag-elargi">↓ Voir sections</span>
+      </div>
+
+    </div>
+
+    <!-- COMMISSION INFRASTRUCTURES ÉLARGIE -->
+    <div class="infra-card" id="infra-section">
+      <div class="infra-header">
+        <div class="infra-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Commission n° 08 — Élargie</div>
+          <div class="infra-title">Infrastructures et Environnement</div>
+          <div class="infra-sub">Supervision des constructions communautaires, maintenance des équipements collectifs, protection du cadre naturel de Thidé et coordination entre les trois sections géographiques de l'organisation.</div>
+          <div class="infra-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945"/></svg>
+            Implantation sur les 3 sections géographiques
+          </div>
+        </div>
+      </div>
+
+      <div class="sections-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--green)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        Sections géographiques de YELLITAARE Thidé
+      </div>
+
+      <div class="geo-sections">
+
+        <!-- Section 1 — Village -->
+        <div class="geo-section village">
+          <div class="geo-header">
+            <div class="geo-num">1</div>
+            <div class="geo-header-text">
+              <h3>Village — Thidé</h3>
+              <p>Section d'origine · Wilaya du Brakna</p>
+            </div>
+          </div>
+          <div class="geo-body">
+            <p>La section du village regroupe les résidents permanents de Thidé. Elle constitue le cœur de l'organisation, le territoire d'implantation des projets et le gardien des traditions communautaires.</p>
+            <div style="font-size:12px;font-weight:600;color:var(--green-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Périmètre</div>
+            <div class="geo-locations">
+              <span class="loc-pill" style="background:var(--green-light);border-color:rgba(26,107,60,.3);color:var(--green-dark)">Thidé (village)</span>
+              <span class="loc-pill" style="background:var(--green-light);border-color:rgba(26,107,60,.3);color:var(--green-dark)">Boghé (Commune)</span>
+              <span class="loc-pill" style="background:var(--green-light);border-color:rgba(26,107,60,.3);color:var(--green-dark)">Moughataa de Boghé</span>
+              <span class="loc-pill" style="background:var(--green-light);border-color:rgba(26,107,60,.3);color:var(--green-dark)">Wilaya du Brakna</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 — Ressortissants nationaux -->
+        <div class="geo-section national">
+          <div class="geo-header">
+            <div class="geo-num">2</div>
+            <div class="geo-header-text">
+              <h3>Ressortissants nationaux</h3>
+              <p>Villes de Mauritanie</p>
+            </div>
+          </div>
+          <div class="geo-body">
+            <p>Cette section fédère les ressortissants de Thidé établis dans les différentes villes de Mauritanie. Elle assure la représentation de l'organisation au niveau national et coordonne les contributions et initiatives des membres urbains.</p>
+            <div style="font-size:12px;font-weight:600;color:var(--green-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Villes représentées</div>
+            <div class="geo-locations">
+              <span class="loc-pill">Nouakchott</span>
+              <span class="loc-pill">Nouadhibou</span>
+              <span class="loc-pill">Zouerat</span>
+              <span class="loc-pill">Rosso</span>
+              <span class="loc-pill">Kaédi</span>
+              <span class="loc-pill">Kiffa</span>
+              <span class="loc-pill">Autres villes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 — Diaspora internationale -->
+        <div class="geo-section diaspora">
+          <div class="geo-header">
+            <div class="geo-num">3</div>
+            <div class="geo-header-text">
+              <h3>Diaspora internationale</h3>
+              <p>Ressortissants hors Mauritanie</p>
+            </div>
+          </div>
+          <div class="geo-body">
+            <p>La section diaspora représente les ressortissants de Thidé établis à l'étranger. Acteur clé du financement et du rayonnement de l'organisation, elle contribue de manière décisive aux projets communautaires depuis l'international.</p>
+            <div style="font-size:12px;font-weight:600;color:var(--green-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Zones représentées</div>
+            <div class="geo-locations">
+              <span class="loc-pill">Afrique</span>
+              <span class="loc-pill">Europe</span>
+              <span class="loc-pill">Amériques</span>
+              <span class="loc-pill">Maghreb</span>
+              <span class="loc-pill">Golfe</span>
+              <span class="loc-pill">Autres</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LISTE RAPIDE DES 8 COMMISSIONS -->
+    <div class="section-tag" style="margin-top:40px">Récapitulatif</div>
+    <h2 class="section-title">Liste officielle des commissions obligatoires</h2>
+    <p class="section-sub">Telles que définies par le Règlement Intérieur de YELLITAARE Thidé.</p>
+    <div class="quick-list">
+      <div class="quick-item"><span class="num">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Éducation et Formation</div>
+      <div class="quick-item"><span class="num">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Eau, Hygiène et Assainissement</div>
+      <div class="quick-item"><span class="num">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Santé et Actions sociales</div>
+      <div class="quick-item"><span class="num">04</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Jeunesse, Sport et Culture</div>
+      <div class="quick-item"><span class="num">05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Femmes et Genre</div>
+      <div class="quick-item"><span class="num">06</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Développement Économique</div>
+      <div class="quick-item"><span class="num">07</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Commission Diaspora et Relations extérieures</div>
+      <div class="quick-item" style="border-left-color:var(--gold);background:var(--gold-light)"><span class="num" style="color:var(--gold-dark)">08</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold-dark)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span style="color:var(--gold-dark)">Commission Infrastructures et Environnement <span style="font-size:11px;font-weight:400;color:var(--gold-dark);opacity:.8">(3 sections : Village · Nationaux · Diaspora)</span></span></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-strip">
+      <div class="cta-strip-text">
+        <div class="tag">Rejoindre YELLITAARE</div>
+        <h3>Vous souhaitez participer à une commission ?</h3>
+        <p>Adhérez à YELLITAARE Thidé et contribuez activement aux projets communautaires.</p>
+      </div>
+      <a href="adhesion.html" class="cta-strip-btn">Adhérer maintenant →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-badge">YT</div>
+        <h3>YELLITAARE Thidé</h3>
+        <p>Organisation Communautaire Inclusive de Thidé — Gouvernance participative, transparence et développement durable.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="transparence.html">Transparence</a></li>
+          <li><a href="commissions.html">Commissions</a></li>
+          <li><a href="adhesion.html">Adhésion en ligne</a></li>
+          <li><a href="espace-membre.html">Espace membre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Trésorerie YELLITAARE</a></li>
+          <li><a href="#">Adhésion &amp; inscription</a></li>
+          <li><a href="#">Secrétariat général</a></li>
+          <li><a href="#">WhatsApp communautaire</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar"><div class="container">© 2026 YELLITAARE Thidé · Tous droits réservés · Comité de Gestion</div></div>
+</footer>
+
+<script>
+const btn=document.getElementById('hamburger'),menuM=document.getElementById('mobile-menu');
+btn.addEventListener('click',()=>{menuM.classList.toggle('open');const s=btn.querySelectorAll('span');if(menuM.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)'}else{s.forEach(x=>{x.style.transform='';x.style.opacity=''})}});
+(function(){const ref=sessionStorage.getItem('yt_session_ref');if(!ref){document.addEventListener('DOMContentLoaded',()=>{const o=document.getElementById('gate-overlay');if(o){o.classList.add('show');document.body.style.overflow='hidden';}});}})();
+function toggleGateRef(){const f=document.getElementById('gate-ref-form');f.classList.toggle('show');if(f.classList.contains('show'))document.getElementById('gate-ref-input').focus();}
+function gateLogin(){const val=document.getElementById('gate-ref-input').value.trim();const errEl=document.getElementById('gate-ref-err');if(!val)return;let db=[];try{db=JSON.parse(localStorage.getItem('yellitaare_adherents_v1')||'[]');}catch(e){}const member=db.find(r=>r.reference===val);if(member){sessionStorage.setItem('yt_session_ref',member.reference);sessionStorage.setItem('yt_session_nom',member.nom_complet||(member.prenom+' '+member.nom));errEl.style.display='none';document.getElementById('gate-overlay').classList.remove('show');document.body.style.overflow='';}else{errEl.style.display='block';}}
+</script>
+</body>
+</html>
